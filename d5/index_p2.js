@@ -60,9 +60,7 @@ async function init() {
       rowOrigin.splice(rowOrigin.length - quantity);
 
       const rowDestination = reversedCratesPositions[destination - 1];
-      while (movedCrates.length > 0) {
-        rowDestination.push(movedCrates.pop());
-      }
+      rowDestination.push(...movedCrates);
     } catch (e) {
       console.log(e);
     }
